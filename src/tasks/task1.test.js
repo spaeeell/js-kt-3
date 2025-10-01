@@ -1,23 +1,31 @@
 import { test, expect } from "vitest";
 import { processWord } from "./task1";
 
-test("throws error on non-alpha words", () => {
-    expect(() => processWord("abc123", "a")).toThrowError("Некорректная строка")
-})
+test("если слово содержит небуквенные символы, выдается ошибка", () => {
+    expect(() => processWord("abc123", "a")).toThrowError(
+        "Слово содержит небуквенные символы"
+    );
+});
 
-test("throws error if user cancels input", () => {
-    expect(() => processWord(null, "a")).toThrowError("Некорректная строка")
-    expect(() => processWord("Рай", null)).toThrowError("Некорректный символ")
-})
+test("если пользователь отменяет ввод, выдается ошибка", () => {
+    expect(() => processWord(null, "a")).toThrowError(
+        "Некорректное слово"
+    );
+    expect(() => processWord("Рай", null)).toThrowError(
+        "Не указан игнорируемый символ"
+    );
+});
 
-test("works correctly on single occur of ignored character", () => {
-    //
-})
+test("работает при единственном вхождении игнорируемого символа", () => {
+    expect(processWord("Рай", "а")).toBe("Рй");
+    expect(processWord("Мячик", "м")).toBe("ячик");
+});
 
-test("works correctly on multiple occur of ignored character", () => {
-    //
-})
+test("работает при множественном вхождении игнорируемого символа", () => {
+    expect(processWord("Идиллия", "И")).toBe("длля");
+    expect(processWord("Погода", "о")).toBe("Пгда");
+});
 
-test("works correctly on words without ignored character", () => {
-    //
-})
+test("если игнорируемого символа нет в строке, отдается исходная", () => {
+    expect(processWord("Погода", "я")).toBe("Погода");
+});
