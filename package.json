@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "vitest"
+    "test": "vitest watch --reporter=dot"
   },
   "devDependencies": {
     "vitest": "^3.2.4"
