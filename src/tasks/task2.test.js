@@ -1,18 +1,27 @@
 import { test, expect } from "vitest";
-import { getMultiplesOfThree } from "./task1";
+import { getMultiplesOfThree } from "./task2";
 
-test("throws error on user cancel", () => {
+test("если пользователь отменяет ввод, выдается ошибка", () => {
     expect(() => getMultiplesOfThree(null)).toThrowError("Пользователь отменил ввод")
 })
 
-test("throws error on incorrect user input", () => {
-    //
+test("если пользователь ввёл не число, выдается ошибка", () => {
+    expect(() => getMultiplesOfThree("abc")).toThrowError("Некорректные входные данные")
 })
 
-test("correctly process basic cases", () => {
-    //
+test("работает на базовых случаях", () => {
+    expect(getMultiplesOfThree("11")).toBe("3, 6, 9")
+    expect(getMultiplesOfThree("14")).toBe("3, 6, 9, 12")
 })
 
-test("correctly includes boundaries", () => {
-    //
+test("правая граница включена в вывод", () => {
+    expect(getMultiplesOfThree("9")).toBe("3, 6, 9")
+})
+
+test("не добавляет лишние разделители", () => {
+    expect(getMultiplesOfThree("4")).toBe("3")
+})
+
+test("выдает пустую строку, если кратных нет", () => {
+    expect(getMultiplesOfThree("2")).toBe("")
 })
