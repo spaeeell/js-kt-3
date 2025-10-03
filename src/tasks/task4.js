@@ -4,6 +4,7 @@
  * @description Проверка слова на палиндром
  */
 export function isPalindrome(word) {
-
+    
+    
     return result
 }
