@@ -39,13 +39,13 @@ console.log(data)  // [5, 4, 3, 2, 1]
 
 #### Задача 4
 
-Напишите функцию `hasCorrectElement(data, callback)`, которая принимает массив и колбэк-функцию. Ваша функция должна проверить, существует ли в массиве хоть один элемент, который удовлетворяет условию колбэк-функции, и вернуть ответ (`true` или `false`).
+Напишите функцию `hasCorrectElement(data, callback)`, которая принимает массив и колбэк-функцию. Ваша функция должна проверить, существует ли в массиве хоть один элемент, который удовлетворяет условию колбэк-функции, и вернуть ответ `true` или `false`.
 
 ```js
 const array = [1,2,3,4]
 
 console.log(hasCorrectElement(array, (elem) => elem == 3)) // true
-console.log(hasCorrectElement(array, (elem) => elem == 3)) // true
+console.log(hasCorrectElement(array, (elem) => elem % 5 === 0)) // false
 ```
 
 ## Критерии оценивания

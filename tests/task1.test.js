@@ -15,7 +15,7 @@ test("[1] возвращает массив с перемноженными эл
 test("[0.5] не модифицирует исходный массив", ({
   annotate,
 }) => {
-  annotate(1);
+  annotate(0.5);
 
   const initial = [1, 2, 3]
   multipliedByN(initial, 2)

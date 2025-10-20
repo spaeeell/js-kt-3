@@ -1,4 +1,4 @@
-import { describe, test, expect, vi } from "vitest";
+import { test, expect, vi } from "vitest";
 import { reverseArray } from "../src/task3";
 
 
@@ -12,11 +12,12 @@ test("[1] выводит развернутый массив в консоль",
 
   expect(spy).toHaveBeenCalledOnce()
   expect(spy).toHaveBeenCalledWith([3, 2, 1])
-  vi.mo
+  
+  vi.restoreAllMocks()
 });
 
 test("[0.75] модифицирует массив на месте", ({ annotate }) => {
-  annotate(1);
+  annotate(0.75);
 
   const spy = vi.spyOn(console, 'log')
 
@@ -25,4 +26,6 @@ test("[0.75] модифицирует массив на месте", ({ annotate
 
   console.log(values)
   expect(spy).toHaveBeenLastCalledWith([3, 2, 1])
+
+  vi.restoreAllMocks()
 });
