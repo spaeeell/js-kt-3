@@ -12,11 +12,11 @@ test("[1] возвращает массив с перемноженными эл
   assert.deepEqual(multipliedByN([], 2), []);
 });
 
-test("[1] не модифицирует исходный массив", ({
+test("[0.5] не модифицирует исходный массив", ({
   annotate,
 }) => {
   annotate(1);
-  
+
   const initial = [1, 2, 3]
   multipliedByN(initial, 2)
   assert.deepEqual(initial, [1, 2, 3])
