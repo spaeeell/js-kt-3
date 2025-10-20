@@ -3,6 +3,6 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    reporters: [path.join(import.meta.dirname, "src", "custom-reporter.js")],
+    reporters: [path.join(import.meta.dirname, "vitest.reporter.js")],
   },
 });
