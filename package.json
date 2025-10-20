@@ -1,5 +1,7 @@
 {
+  "type": "module",
   "scripts": {
+    "dev": "node --watch src/sandbox.js",
     "test": "vitest watch --reporter=dot",
     "test:report": "vitest run",
     "lint": "oxlint src --fix"
