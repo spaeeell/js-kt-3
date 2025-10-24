@@ -1,21 +1,21 @@
-/**
+    /**
  * @param {any[]} initialArray - Исходный массив
- * @returns {undefined} 
- * 
+ * @returns {undefined}
+ *
  * @description Разворот массива на месте с выводом в консоль
  */
-function reverseArray(initialArray) {
+    export function reverseArray(initialArray) {
     let start = 0;
     let end = initialArray.length - 1;
 
     while (start < end) {
-        const temp = initialArray[start];
-        initialArray[start] = initialArray[end];
-        initialArray[end] = temp;
-
+        [initialArray[start], initialArray[end]] =
+        [initialArray[end],
+        initialArray[start]
+        ];
         start++;
         end--;
     }
 
-    console.log(initialArray); 
+    console.log(initialArray);
 }
